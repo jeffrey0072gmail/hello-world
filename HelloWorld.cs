@@ -6,8 +6,8 @@ namespace HelloWorldApp
     {
         static void Main(string[] args)
         {
-            // Print "Hello, World!!!" to the console
-            Console.WriteLine("Hello, World!!!");
+            // Print "Hello, World!" to the console
+            Console.WriteLine("Hello, World!");
         }
     }
 }
