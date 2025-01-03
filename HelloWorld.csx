@@ -5,7 +5,7 @@ Console.Clear();
 Console.BackgroundColor = ConsoleColor.Black;
 
 // Create a rainbow effect for "Hello, World!"
-string[] colors = { "Red", "Yellow", "Green", "Cyan", "Blue", "Magenta" };
+ConsoleColor[] colors = { ConsoleColor.Red, ConsoleColor.Yellow, ConsoleColor.Green, ConsoleColor.Cyan, ConsoleColor.Blue, ConsoleColor.Magenta };
 string message = "Hello, Wonderful World! 🌎";
 
 // Print a decorative border
@@ -18,9 +18,10 @@ Console.WriteLine($"\nWelcome, {Environment.UserName}!");
 Console.WriteLine($"It's {DateTime.UtcNow:F} (UTC)\n");
 
 // Print the main message with color changes
+Random random = new Random();
 foreach (char c in message)
 {
-    Console.ForegroundColor = (ConsoleColor)((int)ConsoleColor.Red + new Random().Next(0, colors.Length));
+    Console.ForegroundColor = colors[random.Next(colors.Length)];
     Console.Write(c);
     System.Threading.Thread.Sleep(100); // Add a small delay for effect
 }
